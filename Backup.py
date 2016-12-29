@@ -25,7 +25,7 @@ def zipAll (pth, fil):
         try:
             archive.write("%s%s" % (pth, fil))
         except:
-            print ("%s%s unsuccesfully written!" % (pth, fil)
+            print ("%s%s unsuccesfully written!" % (pth, fil))
 
 #set up destination file path
 try:
