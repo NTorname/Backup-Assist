@@ -22,7 +22,10 @@ def zipAll (pth, fil):
         print ("Ignorng:", fil)
     else: #if it is a file
         print ("Compressing:", fil)
-        archive.write("%s%s" % (pth, fil))
+        try:
+            archive.write("%s%s" % (pth, fil))
+        except:
+            print ("%s%s unsuccesfully written!" % (pth, fil)
 
 #set up destination file path
 try:
