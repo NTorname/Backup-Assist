@@ -12,7 +12,7 @@ import os
 
 a = datetime.datetime.now()
 
-#recursive function for nestes directories
+#recursive function for nested directories
 def zipAll (pth, fil):
     directory = "%s%s%s" % (str(pth), str(fil), "\\")
     if os.path.isdir(directory): #if it is a directory
