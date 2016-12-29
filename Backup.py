@@ -37,7 +37,7 @@ except:
     text = open("destination.txt", "w")
     text.write("enter the destination file path here, ending with '\\'")
     text.close()
-    input ("destination.txt not found! Creating pone now.")
+    input ("destination.txt not found! Creating one now. Press any key to exit.")
     quit()
 
 #get sources
@@ -49,7 +49,7 @@ except:
     text = open("sources.txt", "w")
     text.write("enter the source file paths here, ending with '\\'")
     text.close()
-    input ("sources.txt not found! Creating pone now.")
+    input ("sources.txt not found! Creating one now. Press any key to exit.")
     quit()
 
 #add to zip archive
