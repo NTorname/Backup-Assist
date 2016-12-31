@@ -18,8 +18,8 @@ def zipAll (pth, fil):
     if os.path.isdir(directory): #if it is a directory
         for file in os.listdir(directory):
             zipAll(directory, file)   
-    elif fil.endswith(".zip") or fil.endswith(".7z") or fil.endswith(".thumbnails"): #ignore these
-        print ("Ignorng:", fil)
+    #elif fil.endswith(".zip") or fil.endswith(".7z") or fil.endswith(".thumbnails"): #ignore these
+        #print ("Ignorng:", fil)
     else: #if it is a file
         print ("Compressing:", fil)
         try:
