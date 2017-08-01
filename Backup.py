@@ -8,25 +8,31 @@ import zipfile
 import zlib
 import os
 
+global isBlack
+isBlack = False
+
 a = datetime.datetime.now()
 
 #recursive function for nested directories
 def zipAll (pth, fil):
+    global isBlack
     directory = "%s%s%s" % (str(pth), str(fil), "\\")
     for item in blacklist:
         if item == directory:
-            print ("\n%s is blacklisted" % directory)
-        else:
-            if os.path.isdir(directory): #if it is a directory
-                print ("\nGoung into %s" % directory)
-                for file in os.listdir(directory):
-                     zipAll(directory, file)   
-            else: #if it is a file
-                print ("Compressing:", fil)
-                try:
-                    archive.write("%s%s" % (pth, fil))
-                except:
-                    print ("%s%s unsuccesfully written!" % (pth, fil))
+            print ("\n%s is blacklisted\n" % directory)
+            isBlack = True
+    if isBlack:
+        isBlack = False
+    elif os.path.isdir(directory): #if it is a directory
+        print ("\nGoing into %s" % directory)
+        for file in os.listdir(directory):
+                zipAll(directory, file)   
+    else: #if it is a file
+        print ("Compressing:", fil)
+        try:
+            archive.write("%s%s" % (pth, fil))
+        except:
+            print ("%s%s unsuccesfully written!" % (pth, fil))
 
 #set up destination file path
 try:
